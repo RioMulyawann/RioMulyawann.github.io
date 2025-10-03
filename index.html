@@ -3,69 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Lionel Messi - The GOAT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --messi-blue: #1e3a8a;
+            --messi-gold: #fbbf24;
+            --argentina-blue: #74acdf;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--messi-blue) 0%, var(--argentina-blue) 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920&h=1080&fit=crop') center/cover;
+            opacity: 0.1;
+        }
+        
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 8px solid var(--messi-gold);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .trophy-icon {
+            color: var(--messi-gold);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--messi-gold);
+        }
+        
+        .achievement-card {
+            border-left: 4px solid var(--messi-gold);
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transform: translateX(10px);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--messi-gold);
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            background: var(--messi-blue);
+            color: white;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--messi-gold);
+            transform: translateY(-5px);
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--messi-blue);">
         <div class="container">
-            <a class="navbar-brand" href="#">My Portfolio</a>
+            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-futbol"></i> Lionel Messi</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Biography</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stats">Statistics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Connect</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-primary text-white text-center py-5">
+    <header class="hero-section text-white text-center position-relative">
         <div class="container">
-            <h1 class="display-4">Welcome to My Portfolio</h1>
-            <p class="lead">Web Developer | Designer | Creator</p>
+            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&h=600&fit=crop" 
+                 alt="Lionel Messi" 
+                 class="profile-img mb-4">
+            <h1 class="display-3 fw-bold mb-3">Lionel Andrés Messi</h1>
+            <p class="lead fs-3 mb-2"><i class="fas fa-star" style="color: var(--messi-gold);"></i> The Greatest Of All Time <i class="fas fa-star" style="color: var(--messi-gold);"></i></p>
+            <p class="fs-5">World Cup Champion | 8x Ballon d'Or Winner | Football Legend</p>
+            <div class="mt-4">
+                <span class="badge bg-light text-dark fs-6 me-2"><i class="fas fa-flag"></i> Argentina</span>
+                <span class="badge bg-light text-dark fs-6 me-2"><i class="fas fa-shirt"></i> Inter Miami CF</span>
+                <span class="badge bg-light text-dark fs-6"><i class="fas fa-running"></i> Forward</span>
+            </div>
         </div>
     </header>
 
     <!-- About Section -->
     <section id="about" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">About Me</h2>
-            <p class="text-center">I'm a passionate web developer with experience in creating modern and responsive websites.</p>
+            <h2 class="text-center section-title">Biography</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=800&h=600&fit=crop" 
+                         alt="Messi playing" 
+                         class="img-fluid rounded shadow-lg">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-3">The Journey of a Legend</h3>
+                    <p>Born on June 24, 1987, in Rosario, Argentina, Lionel Messi is widely regarded as the greatest football player of all time. His incredible journey began at FC Barcelona's youth academy, La Masia, where he developed into a football prodigy.</p>
+                    <p>Throughout his illustrious career spanning over two decades, Messi has shattered countless records and won every major trophy in club and international football. His dribbling ability, vision, and goal-scoring prowess are unmatched in the history of the sport.</p>
+                    <p>In 2022, Messi achieved his lifelong dream by leading Argentina to World Cup glory in Qatar, cementing his legacy as the complete footballer. He currently plays for Inter Miami CF in Major League Soccer, continuing to inspire millions worldwide.</p>
+                    <div class="mt-4">
+                        <p class="mb-2"><strong><i class="fas fa-calendar"></i> Born:</strong> June 24, 1987 (Age 37)</p>
+                        <p class="mb-2"><strong><i class="fas fa-map-marker-alt"></i> Birthplace:</strong> Rosario, Argentina</p>
+                        <p class="mb-2"><strong><i class="fas fa-ruler-vertical"></i> Height:</strong> 1.70 m (5 ft 7 in)</p>
+                        <p class="mb-2"><strong><i class="fas fa-shoe-prints"></i> Position:</strong> Forward / Attacking Midfielder</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
+    <!-- Statistics Section -->
+    <section id="stats" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Projects</h2>
+            <h2 class="text-center section-title">Career Statistics</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <i class="fas fa-futbol trophy-icon"></i>
+                        <div class="stat-number">800+</div>
+                        <p class="mb-0">Career Goals</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <i class="fas fa-hands-helping trophy-icon"></i>
+                        <div class="stat-number">350+</div>
+                        <p class="mb-0">Career Assists</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <i class="fas fa-trophy trophy-icon"></i>
+                        <div class="stat-number">44</div>
+                        <p class="mb-0">Major Trophies</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <i class="fas fa-award trophy-icon"></i>
+                        <div class="stat-number">8</div>
+                        <p class="mb-0">Ballon d'Or Awards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">Major Achievements</h2>
             <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
+                <div class="col-md-4 mb-4">
+                    <div class="card achievement-card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Project 1</h5>
-                            <p class="card-text">Description of project 1.</p>
+                            <i class="fas fa-globe trophy-icon"></i>
+                            <h5 class="card-title">International Glory</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success"></i> FIFA World Cup 2022</li>
+                                <li><i class="fas fa-check-circle text-success"></i> Copa América 2021, 2024</li>
+                                <li><i class="fas fa-check-circle text-success"></i> Finalissima 2022</li>
+                                <li><i class="fas fa-check-circle text-success"></i> Olympic Gold Medal 2008</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
+                <div class="col-md-4 mb-4">
+                    <div class="card achievement-card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Project 2</h5>
-                            <p class="card-text">Description of project 2.</p>
+                            <i class="fas fa-trophy trophy-icon"></i>
+                            <h5 class="card-title">Club Success</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success"></i> 4× UEFA Champions League</li>
+                                <li><i class="fas fa-check-circle text-success"></i> 10× La Liga Titles</li>
+                                <li><i class="fas fa-check-circle text-success"></i> 7× Copa del Rey</li>
+                                <li><i class="fas fa-check-circle text-success"></i> Ligue 1 & Leagues Cup</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
+                <div class="col-md-4 mb-4">
+                    <div class="card achievement-card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Project 3</h5>
-                            <p class="card-text">Description of project 3.</p>
+                            <i class="fas fa-medal trophy-icon"></i>
+                            <h5 class="card-title">Individual Honors</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success"></i> 8× Ballon d'Or (Record)</li>
+                                <li><i class="fas fa-check-circle text-success"></i> 6× European Golden Shoe</li>
+                                <li><i class="fas fa-check-circle text-success"></i> FIFA World Cup Golden Ball</li>
+                                <li><i class="fas fa-check-circle text-success"></i> FIFA Best Men's Player</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -74,19 +272,39 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Contact Me</h2>
+            <h2 class="text-center section-title">Connect With Leo</h2>
             <div class="text-center">
-                <p>Email: your.email@example.com</p>
-                <p>Phone: (123) 456-7890</p>
+                <p class="lead mb-4">Follow Lionel Messi on social media for the latest updates and highlights</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/leomessi/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/TeamMessi" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/LeoMessi" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" target="_blank" title="Official Website">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                </div>
+                <p class="mt-4 text-muted">
+                    <i class="fas fa-quote-left"></i> 
+                    "I start early and I stay late, day after day, year after year. It took me 17 years and 114 days to become an overnight success." 
+                    <i class="fas fa-quote-right"></i>
+                    <br><strong>- Lionel Messi</strong>
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    <footer class="text-white text-center py-4" style="background-color: var(--messi-blue);">
+        <p class="mb-2"><i class="fas fa-star" style="color: var(--messi-gold);"></i> Lionel Messi - The GOAT <i class="fas fa-star" style="color: var(--messi-gold);"></i></p>
+        <p class="mb-0">&copy; 2024 Tribute Page. All rights reserved. | Created by a Messi Fan</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
