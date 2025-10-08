@@ -3,310 +3,611 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lionel Messi - The GOAT</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>GrowFi - Transparent Finance for Limitless Growth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --messi-blue: #1e3a8a;
-            --messi-gold: #fbbf24;
-            --argentina-blue: #74acdf;
+        /* FITUR CSS: Styling khusus untuk animasi dan efek visual */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
         }
         
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .gradient-bg {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
         }
         
-        .hero-section {
-            background: linear-gradient(135deg, var(--messi-blue) 0%, var(--argentina-blue) 100%);
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
+        .crypto-glow {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
         }
         
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920&h=1080&fit=crop') center/cover;
-            opacity: 0.1;
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
         }
         
-        .profile-img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border: 8px solid var(--messi-gold);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            object-fit: cover;
-            transition: transform 0.3s ease;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
         
-        .profile-img:hover {
-            transform: scale(1.05);
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
         }
         
-        .trophy-icon {
-            color: var(--messi-gold);
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.8); }
         }
         
-        .stat-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
+        .slide-in {
+            animation: slideIn 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
         }
         
-        .stat-card:hover {
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .feature-card:hover {
             transform: translateY(-10px);
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--messi-gold);
-        }
-        
-        .achievement-card {
-            border-left: 4px solid var(--messi-gold);
             transition: all 0.3s ease;
         }
         
-        .achievement-card:hover {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            transform: translateX(10px);
-        }
-        
-        .section-title {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-            margin-bottom: 40px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--messi-gold);
-        }
-        
-        .social-links a {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            border-radius: 50%;
-            background: var(--messi-blue);
-            color: white;
-            margin: 0 10px;
+        .social-icon:hover {
+            transform: scale(1.2);
             transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--messi-gold);
-            transform: translateY(-5px);
         }
     </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--messi-blue);">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-futbol"></i> Lionel Messi</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">Biography</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#stats">Statistics</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Connect</a></li>
-                </ul>
+<body class="bg-gray-900 text-white">
+    <!-- FITUR 1: NAVIGATION BAR - Menu navigasi yang fixed di atas dengan logo GrowFi -->
+    <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- FITUR 1A: LOGO GROWFI - Logo custom dengan ikon bintang dan gradient -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                            <path d="M12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8Z" opacity="0.7"/>
+                            <path d="M7 19L8 21L12 20L16 21L17 19L15 17L12 18L9 17L7 19Z" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold">GrowFi</span>
+                </div>
+                <!-- FITUR 1B: MENU NAVIGASI - Link ke berbagai section -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-green-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-green-400 transition-colors">About</a>
+                    <a href="#problem" class="hover:text-green-400 transition-colors">Problem</a>
+                    <a href="#solution" class="hover:text-green-400 transition-colors">Solution</a>
+                    <a href="#contact" class="hover:text-green-400 transition-colors">Contact</a>
+                </div>
+                <!-- FITUR 1C: MOBILE MENU BUTTON - Tombol untuk menu mobile -->
+                <button class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-section text-white text-center position-relative">
-        <div class="container">
-            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&h=600&fit=crop" 
-                 alt="Lionel Messi" 
-                 class="profile-img mb-4">
-            <h1 class="display-3 fw-bold mb-3">Lionel Andrés Messi</h1>
-            <p class="lead fs-3 mb-2"><i class="fas fa-star" style="color: var(--messi-gold);"></i> The Greatest Of All Time <i class="fas fa-star" style="color: var(--messi-gold);"></i></p>
-            <p class="fs-5">World Cup Champion | 8x Ballon d'Or Winner | Football Legend</p>
-            <div class="mt-4">
-                <span class="badge bg-light text-dark fs-6 me-2"><i class="fas fa-flag"></i> Argentina</span>
-                <span class="badge bg-light text-dark fs-6 me-2"><i class="fas fa-shirt"></i> Inter Miami CF</span>
-                <span class="badge bg-light text-dark fs-6"><i class="fas fa-running"></i> Forward</span>
+    <!-- FITUR 2: HERO SECTION - Bagian utama dengan slogan dan CTA -->
+    <section id="home" class="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <!-- FITUR 2A: LOGO ANIMASI - Logo besar dengan efek floating -->
+            <div class="floating-animation mb-8">
+                <div class="w-32 h-32 mx-auto bg-white/10 rounded-full flex items-center justify-center crypto-glow">
+                    <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                        <path d="M12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8Z" opacity="0.7"/>
+                        <path d="M7 19L8 21L12 20L16 21L17 19L15 17L12 18L9 17L7 19Z" opacity="0.5"/>
+                    </svg>
+                </div>
+            </div>
+            <!-- FITUR 2B: JUDUL UTAMA - Slogan dengan gradient text -->
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 slide-in">
+                Transparent Finance for <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">Limitless Growth</span>
+            </h1>
+            <!-- FITUR 2C: SUBTITLE - Deskripsi misi -->
+            <p class="text-xl md:text-2xl mb-8 text-gray-200 slide-in" style="animation-delay: 0.2s;">
+                Empowering Businesses, Growing Wealth. Connecting Investors and Innovators through Blockchain
+            </p>
+            <!-- FITUR 2D: CTA BUTTONS - Tombol aksi utama -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center slide-in" style="animation-delay: 0.4s;">
+                <button class="bg-green-600 hover:bg-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all pulse-glow">
+                    Start Growing
+                </button>
+                <button class="border-2 border-white/30 hover:border-white/60 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
+                    Learn More
+                </button>
             </div>
         </div>
-    </header>
+        
+        <!-- FITUR 2E: ELEMEN DEKORATIF - Lingkaran floating untuk visual -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-green-500/20 rounded-full floating-animation" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-20 right-10 w-16 h-16 bg-blue-500/20 rounded-full floating-animation" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/2 left-20 w-12 h-12 bg-emerald-500/20 rounded-full floating-animation" style="animation-delay: 3s;"></div>
+    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="text-center section-title">Biography</h2>
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4">
-                    <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=800&h=600&fit=crop" 
-                         alt="Messi playing" 
-                         class="img-fluid rounded shadow-lg">
+    <!-- FITUR 3: ABOUT SECTION - Bagian tentang GrowFi dengan vision/mission -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">About GrowFi</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    GrowFi (GFI) is a decentralized funding platform designed to solve a core problem in real economy financing: the difficulty for global MSMEs and startups, underserved by traditional financial institutions, to access capital. We utilize the advantages of Blockchain and Smart Contracts to create a secure, efficient, and completely transparent investment path.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- FITUR 3A: VISION STATEMENT -->
+                    <h3 class="text-3xl font-bold mb-6 text-green-400">Our Vision</h3>
+                    <p class="text-lg text-gray-300 mb-8">
+                       To become the singular global platform recognized as the primary bridge between global capital and the multi-sector MSME real economy, achieving full financial inclusion supported by Artificial Intelligence (AI) risk scoring and a community-managed Decentralized Autonomous Organization (DAO).
+                    </p>
+                    
+                    <!-- FITUR 3B: MISSION STATEMENT -->
+                    <h3 class="text-3xl font-bold mb-6 text-green-400">Our Mission</h3>
+                    <p class="text-lg text-gray-300 mb-6">
+                        To change the global funding paradigm by building an inclusive and decentralized blockchain ecosystem. We aim to provide transparent, secure, and efficient capital access for millions of MSMEs/startups worldwide, while offering superior and protected investment opportunities for global investors through Crypto Collateral and Smart Contractguarantees.
+                    </p>
+                    <!-- FITUR 3C: TAGLINE BOX -->
+                    <div class="bg-green-900/20 border border-green-500/30 rounded-lg p-6 mb-8">
+                        <p class="text-xl font-semibold text-green-400 text-center">
+                            Grow Smarter. Invest Safer. Earn More.
+                        </p>
+                    </div>
+                    
+                    <!-- FITUR 3D: WHITEPAPER BUTTON - Tombol untuk membaca whitepaper -->
+                    <div class="text-center">
+                        <a href="https://app.gitbook.com/o/ec52VU6XMN9qG9f1SRRP/s/vSjjr5SUAY004W5x6aa3/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd"/>
+                            </svg>
+                            Read Our Whitepaper
+                        </a>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-3">The Journey of a Legend</h3>
-                    <p>Born on June 24, 1987, in Rosario, Argentina, Lionel Messi is widely regarded as the greatest football player of all time. His incredible journey began at FC Barcelona's youth academy, La Masia, where he developed into a football prodigy.</p>
-                    <p>Throughout his illustrious career spanning over two decades, Messi has shattered countless records and won every major trophy in club and international football. His dribbling ability, vision, and goal-scoring prowess are unmatched in the history of the sport.</p>
-                    <p>In 2022, Messi achieved his lifelong dream by leading Argentina to World Cup glory in Qatar, cementing his legacy as the complete footballer. He currently plays for Inter Miami CF in Major League Soccer, continuing to inspire millions worldwide.</p>
-                    <div class="mt-4">
-                        <p class="mb-2"><strong><i class="fas fa-calendar"></i> Born:</strong> June 24, 1987 (Age 37)</p>
-                        <p class="mb-2"><strong><i class="fas fa-map-marker-alt"></i> Birthplace:</strong> Rosario, Argentina</p>
-                        <p class="mb-2"><strong><i class="fas fa-ruler-vertical"></i> Height:</strong> 1.70 m (5 ft 7 in)</p>
-                        <p class="mb-2"><strong><i class="fas fa-shoe-prints"></i> Position:</strong> Forward / Attacking Midfielder</p>
+                
+                <!-- FITUR 3E: VISUAL ILLUSTRATION -->
+                <div class="relative">
+                    <div class="w-full h-80 bg-gradient-to-br from-green-600/20 to-blue-600/20 rounded-2xl flex items-center justify-center">
+                        <svg class="w-32 h-32 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L15.09 8.26L22 9L15.09 9.74L12 16L8.91 9.74L2 9L8.91 8.26L12 2Z"/>
+                            <circle cx="12" cy="12" r="3" opacity="0.6"/>
+                            <path d="M7 17L9 19L12 18L15 19L17 17L15 15L12 16L9 15L7 17Z" opacity="0.4"/>
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+<!-- FITUR 4: PROBLEM SECTION - Menjelaskan masalah yang dipecahkan -->
+<section id="problem" class="py-20 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Problem</h2>
+         </div>
 
-    <!-- Statistics Section -->
-    <section id="stats" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center section-title">Career Statistics</h2>
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-futbol trophy-icon"></i>
-                        <div class="stat-number">800+</div>
-                        <p class="mb-0">Career Goals</p>
-                    </div>
+        <!-- Problem Cards: Discriminatory Access, Lack of Transparency, Minimal Crypto Investment -->
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Problem 1: Discriminatory Access to Capital -->
+            <div class="bg-red-900/20 border border-red-500/30 rounded-xl p-8 text-center hover:transform hover:translate-y-2 hover:shadow-lg transition-all duration-300">
+                <div class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <!-- Ikon untuk Discriminatory Access to Capital -->
+                    <svg class="w-8 h-8 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 011-1h6a1 1 0 011 1v16a1 1 0 01-1 1H7a1 1 0 01-1-1V2z" />
+                        <path fill-rule="evenodd" d="M9 2v2H7V2h2zm0 16V4H7v14h2z" />
+                    </svg>
                 </div>
-                <div class="col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-hands-helping trophy-icon"></i>
-                        <div class="stat-number">350+</div>
-                        <p class="mb-0">Career Assists</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-trophy trophy-icon"></i>
-                        <div class="stat-number">44</div>
-                        <p class="mb-0">Major Trophies</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-award trophy-icon"></i>
-                        <div class="stat-number">8</div>
-                        <p class="mb-0">Ballon d'Or Awards</p>
-                    </div>
-                </div>
+                <h3 class="text-2xl font-bold mb-4 text-red-400">Discriminatory Access to Capital</h3>
+                <p class="text-gray-300">
+                    MSMEs/startups in developing countries are often rejected by banks and investors due to lack of credit history, physical collateral, and complex application processes.
+                </p>
             </div>
-        </div>
-    </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="py-5">
-        <div class="container">
-            <h2 class="text-center section-title">Major Achievements</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card achievement-card h-100">
-                        <div class="card-body">
-                            <i class="fas fa-globe trophy-icon"></i>
-                            <h5 class="card-title">International Glory</h5>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-check-circle text-success"></i> FIFA World Cup 2022</li>
-                                <li><i class="fas fa-check-circle text-success"></i> Copa América 2021, 2024</li>
-                                <li><i class="fas fa-check-circle text-success"></i> Finalissima 2022</li>
-                                <li><i class="fas fa-check-circle text-success"></i> Olympic Gold Medal 2008</li>
-                            </ul>
-                        </div>
-                    </div>
+            <!-- Problem 2: Lack of Transparency and High Inefficiency -->
+            <div class="bg-orange-900/20 border border-orange-500/30 rounded-xl p-8 text-center hover:transform hover:translate-y-2 hover:shadow-lg transition-all duration-300">
+                <div class="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <!-- Ikon untuk Lack of Transparency and High Inefficiency -->
+                    <svg class="w-8 h-8 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" />
+                    </svg>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card achievement-card h-100">
-                        <div class="card-body">
-                            <i class="fas fa-trophy trophy-icon"></i>
-                            <h5 class="card-title">Club Success</h5>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-check-circle text-success"></i> 4× UEFA Champions League</li>
-                                <li><i class="fas fa-check-circle text-success"></i> 10× La Liga Titles</li>
-                                <li><i class="fas fa-check-circle text-success"></i> 7× Copa del Rey</li>
-                                <li><i class="fas fa-check-circle text-success"></i> Ligue 1 & Leagues Cup</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card achievement-card h-100">
-                        <div class="card-body">
-                            <i class="fas fa-medal trophy-icon"></i>
-                            <h5 class="card-title">Individual Honors</h5>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-check-circle text-success"></i> 8× Ballon d'Or (Record)</li>
-                                <li><i class="fas fa-check-circle text-success"></i> 6× European Golden Shoe</li>
-                                <li><i class="fas fa-check-circle text-success"></i> FIFA World Cup Golden Ball</li>
-                                <li><i class="fas fa-check-circle text-success"></i> FIFA Best Men's Player</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <h3 class="text-2xl font-bold mb-4 text-orange-400">Lack of Transparency and High Inefficiency</h3>
+                <p class="text-gray-300">
+                    Traditional funding processes are opaque, making it difficult for investors to track capital use, while high borrowing costs are caused by middlemen and inefficiencies.
+                </p>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center section-title">Connect With Leo</h2>
-            <div class="text-center">
-                <p class="lead mb-4">Follow Lionel Messi on social media for the latest updates and highlights</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/leomessi/" target="_blank" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://twitter.com/TeamMessi" target="_blank" title="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://www.facebook.com/LeoMessi" target="_blank" title="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" target="_blank" title="Official Website">
-                        <i class="fas fa-globe"></i>
-                    </a>
+            <!-- Problem 3: Minimal Crypto Investment Opportunities -->
+            <div class="bg-yellow-900/20 border border-yellow-500/30 rounded-xl p-8 text-center hover:transform hover:translate-y-2 hover:shadow-lg transition-all duration-300">
+                <div class="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <!-- Ikon untuk Minimal Crypto Investment Opportunities -->
+                    <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M12 7l-1.5-1.5 3.5-3.5h-6l3.5 3.5L12 7zm0 6l-1.5-1.5 3.5-3.5h-6l3.5 3.5L12 13z" />
+                    </svg>
                 </div>
-                <p class="mt-4 text-muted">
-                    <i class="fas fa-quote-left"></i> 
-                    "I start early and I stay late, day after day, year after year. It took me 17 years and 114 days to become an overnight success." 
-                    <i class="fas fa-quote-right"></i>
-                    <br><strong>- Lionel Messi</strong>
+                <h3 class="text-2xl font-bold mb-4 text-yellow-400">Minimal Crypto Investment Opportunities</h3>
+                <p class="text-gray-300">
+                    Crypto investors struggle to find stable, real economy-linked investments in MSMEs, lacking transparency and clear risk mitigation.
                 </p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- FITUR 5: SOLUTION SECTION - Menampilkan solusi GrowFi -->
+<section id="solution" class="py-20 bg-gray-800">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Solution</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                GrowFi addresses these problems with a blockchain-powered platform that democratizes access to growth capital.
+            </p>
+        </div>
+
+        <!-- Solution Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Solution 1: Crypto Collateral & Borderless Process -->
+            <div class="bg-gradient-to-br from-green-900/40 to-green-800/40 border border-green-500/30 rounded-xl p-8 hover:transform hover:translate-y-2 hover:shadow-lg transition-all duration-300">
+                <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-6">
+                    <!-- Ikon untuk Crypto Collateral & Borderless Process -->
+                    <svg class="w-8 h-8 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 011-1h6a1 1 0 011 1v16a1 1 0 01-1 1H7a1 1 0 01-1-1V2z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-green-400">Crypto Collateral & Borderless Process</h3>
+                <p class="text-gray-300">
+                    GrowFi eliminates bureaucracy and physical asset requirements. MSMEs provide collateral in the form of crypto assets (BTC, ETH, USDT) locked in Smart Contracts, ensuring security. The platform offers global access, connecting investors and MSMEs from all over the world.
+                </p>
+            </div>
+
+            <!-- Solution 2: On-Chain Ledger and Smart Contracts -->
+            <div class="bg-gradient-to-br from-blue-900/40 to-blue-800/40 border border-blue-500/30 rounded-xl p-8 hover:transform hover:translate-y-2 hover:shadow-lg transition-all duration-300">
+                <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-6">
+                    <!-- Ikon untuk On-Chain Ledger and Smart Contracts -->
+                    <svg class="w-8 h-8 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-blue-400">On-Chain Ledger and Smart Contracts</h3>
+                <p class="text-gray-300">
+                    All funding transactions, repayment statuses, and MSME fund allocations are recorded on the blockchain, ensuring transparency. Smart Contracts automate the process, reducing operational costs and improving capital efficiency.
+                </p>
+            </div>
+
+            <!-- Solution 3: Flexible Investment Models and Risk Mitigation -->
+            <div class="bg-gradient-to-br from-purple-900/40 to-purple-800/40 border border-purple-500/30 rounded-xl p-8 hover:transform hover:translate-y-2 hover:shadow-lg transition-all duration-300">
+                <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mb-6">
+                    <!-- Ikon untuk Flexible Investment Models and Risk Mitigation -->
+                    <svg class="w-8 h-8 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-purple-400">Flexible Investment Models and Risk Mitigation</h3>
+                <p class="text-gray-300">
+                    GrowFi offers diverse investment options, including lending models and profit-sharing models, with protection from crypto collateral and platform insurance to mitigate risks and offer stable returns.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  
+               
+    <!-- FITUR 6: SOCIAL MEDIA & LINKS SECTION - Koneksi sosial media dan CTA -->
+<section class="py-20 bg-gray-900">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-12">Connect With GrowFi</h2>
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+    <!-- FITUR 6A: SOCIAL MEDIA LINKS -->
+        <div>
+<h3 class="text-2xl font-bold mb-6 text-green-400">Follow Our Journey</h3>
+<div class="flex justify-center space-x-6">
+    
+    <!-- X (Twitter) -->
+<a href="https://x.com/GrowFi_Coin" target="_blank" rel="noopener noreferrer" 
+       class="social-icon w-12 h-12 p-1 bg-black rounded-full flex items-center justify-center hover:bg-gray-900">
+      <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.31l-5.27-6.888-6.033 6.888H1.698l7.73-8.826L1.254 2.25H8.01l4.713 6.21 5.52-6.21z"/>
+      </svg>
+    </a>
+
+    <!-- Discord -->
+    <a href="https://discord.gg/sPHVSJQEqU" target="_blank" rel="noopener noreferrer" 
+       class="social-icon w-12 h-12 p-1 bg-indigo-500 rounded-full flex items-center justify-center hover:bg-indigo-600">
+      <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20.317 4.369a19.91 19.91 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.249a19.72 19.72 0 0 0-5.614 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037c-1.67.319-3.303.877-4.884 1.515a.07.07 0 0 0-.032.027C2.02 9.043 1.214 13.58 1.566 18.058a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.027c.461-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.105c-.652-.247-1.274-.55-1.872-.902a.077.077 0 0 1-.008-.127c.126-.095.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.927 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .079.009c.12.099.246.197.373.292a.076.076 0 0 1-.006.127c-.598.36-1.221.655-1.873.902a.076.076 0 0 0-.04.106c.36.698.773 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .03-.056c.5-5.177-.838-9.685-3.549-13.662a.061.061 0 0 0-.031-.029ZM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.419 0 1.334-.956 2.419-2.157 2.419Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.419 0 1.334-.947 2.419-2.157 2.419Z"/>
+      </svg>
+    </a>
+
+    <!-- Threads -->
+    <a href="https://www.threads.net/@growfi.coin?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" 
+       class="social-icon w-12 h-12 p-1 bg-black rounded-full flex items-center justify-center hover:bg-gray-900">
+      <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12.225 0c6.765 0 11.48 4.74 11.48 11.522 0 6.713-4.715 11.456-11.48 11.456-6.747 0-11.454-4.743-11.454-11.456C.771 4.74 5.478 0 12.225 0Zm6.022 13.025c-.248-1.133-.717-2.12-1.378-2.94-.262-.327-.537-.62-.823-.877.142-.49.257-.99.341-1.499l.02-.123.022-.122c.014-.07.026-.14.036-.208.152-1.026.026-1.94-.395-2.718a4.395 4.395 0 0 0-1.806-1.82c-1.234-.69-2.722-.857-4.305-.487-1.59.371-2.79 1.176-3.563 2.39a6.77 6.77 0 0 0-1.093 3.748h2.198c.014-.935.259-1.657.734-2.236.373-.448.873-.76 1.517-.917.65-.159 1.258-.087 1.78.22.273.161.486.36.634.594.158.25.227.577.205.973-.01.197-.036.398-.078.603-.012.06-.023.116-.034.168l-.025.12c-.032.16-.068.318-.11.472a7.43 7.43 0 0 0-1.735-.13c-1.628.077-2.98.64-4.033 1.673-1.07 1.05-1.615 2.424-1.615 3.998 0 1.591.542 2.972 1.608 4.106 1.067 1.136 2.446 1.722 4.102 1.742 1.657.02 3.075-.54 4.212-1.662 1.156-1.141 1.727-2.65 1.727-4.496v-.002c.005-.197-.007-.406-.036-.627Zm-3.554.442c0 .813-.24 1.459-.714 1.934-.476.476-1.12.715-1.92.715-.799 0-1.443-.239-1.92-.715-.476-.476-.716-1.121-.716-1.934 0-.794.24-1.432.716-1.903.477-.471 1.121-.709 1.92-.709.8 0 1.444.238 1.92.709.474.471.714 1.109.714 1.903Z"/>
+      </svg>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/growfi.coin/" target="_blank" rel="noopener noreferrer" 
+       class="social-icon w-12 h-12 p-1 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 rounded-full flex items-center justify-center hover:opacity-90">
+      <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.5A4 4 0 0 0 3.5 7.5v9a4 4 0 0 0 4 4h9a4 4 0 0 0 4-4v-9a4 4 0 0 0-4-4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7ZM17.5 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/>
+      </svg>
+    </a>
+
+  </div>
+</div>
+
+                
+                <!-- FITUR 6B: GET STARTED BUTTONS -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-green-400">Get Started</h3>
+                    <div class="space-y-4">
+                        <button class="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
+                            Join as Investor
+                        </button>
+                        <button class="w-full border-2 border-green-500 hover:bg-green-500/10 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
+                            Apply for Funding
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="text-white text-center py-4" style="background-color: var(--messi-blue);">
-        <p class="mb-2"><i class="fas fa-star" style="color: var(--messi-gold);"></i> Lionel Messi - The GOAT <i class="fas fa-star" style="color: var(--messi-gold);"></i></p>
-        <p class="mb-0">&copy; 2024 Tribute Page. All rights reserved. | Created by a Messi Fan</p>
+    <!-- FITUR 7: CONTACT SECTION - Form kontak dan informasi -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+                <p class="text-xl text-gray-300">
+                    Ready to grow your business or start investing? Let's connect!
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- FITUR 7A: CONTACT INFORMATION -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 text-green-400">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Email</p>
+                                <p class="text-white font-semibold">growficoin@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Address</p>
+                                <p class="text-white font-semibold">Waterfront WP 3 No.43, Citraland, Jawa Timur 60219</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Phone</p>
+                                <p class="text-white font-semibold">(0274) 554793-GROW</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FITUR 7B: CONTACT FORM - Form kontak yang fungsional -->
+                <div>
+                    <form class="space-y-6" onsubmit="handleSubmit(event)">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                            <input type="text" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-white">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-white">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">I'm interested in</label>
+                            <select required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-white">
+                                <option value="">Select an option</option>
+                                <option value="investing">Investing in startups</option>
+                                <option value="funding">Seeking funding</option>
+                                <option value="partnership">Partnership opportunities</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-white resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FITUR 8: FOOTER - Footer dengan informasi perusahaan -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                                <path d="M12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8Z" opacity="0.7"/>
+                                <path d="M7 19L8 21L12 20L16 21L17 19L15 17L12 18L9 17L7 19Z" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold">GrowFi</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Transparent Finance for Limitless Growth. Empowering businesses and investors through blockchain innovation.
+                    </p>
+                    <p class="text-sm text-gray-500">
+                        © 2024 GrowFi. All rights reserved.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About</h4>
+                    <ul class="space-y-2 text-gray-400">
+  <li>
+    <a href="https://app.gitbook.com/o/ec52VU6XMN9qG9f1SRRP/s/vSjjr5SUAY004W5x6aa3/readme-1" 
+       class="hover:text-white transition-colors" target="_blank">
+       INTRODUCTION
+    </a>
+  </li>
+  <li>
+    <a href="https://app.gitbook.com/o/ec52VU6XMN9qG9f1SRRP/s/vSjjr5SUAY004W5x6aa3/readme-2" 
+       class="hover:text-white transition-colors" target="_blank">
+       MECHANISM AND CORE MODELS
+    </a>
+  </li>
+  <li>
+    <a href="https://app.gitbook.com/o/ec52VU6XMN9qG9f1SRRP/s/vSjjr5SUAY004W5x6aa3/tokenomics-growfi-gfi" 
+       class="hover:text-white transition-colors" target="_blank">
+       TOKENOMICS: GrowFi (GFI)
+    </a>
+  </li>
+  <li>
+    <a href="https://app.gitbook.com/o/ec52VU6XMN9qG9f1SRRP/s/vSjjr5SUAY004W5x6aa3/governance-dao-and-security" 
+       class="hover:text-white transition-colors" target="_blank">
+       GOVERNANCE (DAO) & SECURITY
+    </a>
+  </li>
+  <li>
+    <a href="https://app.gitbook.com/o/ec52VU6XMN9qG9f1SRRP/s/vSjjr5SUAY004W5x6aa3/roadmap" 
+       class="hover:text-white transition-colors" target="_blank">
+       ROADMAP
+    </a>
+  </li>
+</ul>
+
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Risk Disclosure</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- FITUR 9: JAVASCRIPT FUNCTIONALITY - Semua fungsi interaktif -->
+    <script>
+        // FITUR 9A: SMOOTH SCROLLING - Navigasi halus antar section
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FITUR 9B: FORM SUBMISSION HANDLER - Menangani pengiriman form kontak
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const name = formData.get('name') || event.target.querySelector('input[type="text"]').value;
+            const email = formData.get('email') || event.target.querySelector('input[type="email"]').value;
+            const interest = event.target.querySelector('select').value;
+            const message = formData.get('message') || event.target.querySelector('textarea').value;
+            
+            // Show success message
+            alert(`Thank you ${name}! Your message about ${interest} has been received. We'll get back to you at ${email} soon to discuss how GrowFi can help you grow smarter, invest safer, and earn more!`);
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // FITUR 9C: SCROLL EFFECT NAVIGATION - Efek transparansi navbar saat scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-gray-900');
+                nav.classList.remove('bg-gray-900/90');
+            } else {
+                nav.classList.add('bg-gray-900/90');
+                nav.classList.remove('bg-gray-900');
+            }
+        });
+
+        // FITUR 9D: SCROLL ANIMATIONS - Animasi elemen saat muncul di layar
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all slide-in elements
+        document.querySelectorAll('.slide-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FITUR 9E: MOBILE MENU TOGGLE - Fungsi untuk menu mobile (placeholder)
+        const mobileMenuButton = document.querySelector('button.md\\:hidden');
+        
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function() {
+                // This would toggle mobile menu in a real implementation
+                console.log('Mobile menu toggle clicked');
+            });
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9829da6b95ff6bdf',t:'MTc1ODQ2MDc1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
